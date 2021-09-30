@@ -1,3 +1,3 @@
-# Detección de fraude con redes neuronales
+# Detección de fraude con redes neuronales artificiales
 
-Aplicación para detectar fraude en las transacciones de pago con tarjetas de crédito.
+Aplicación para detectar fraude en las transacciones de pago con tarjetas de crédito, utilizando redes neuronales artificiales (RNA)
