@@ -98,10 +98,10 @@ class BuildTrainingDataset(object):
 
         # Verificamos la cantidad de registros de cada dataframe (train, test)
         print("Cantidad de registros")
-        print("Dataset X Train: {0}".format(len(X_train)))
-        print("Dataset X Test: {0}".format(len(X_test)))
-        print("Dataset Y Train: {0}".format(len(y_train)))
-        print("Dataset Y Test: {0}".format(len(y_test)))
+        print("Dataset X Train: {0}".format(len(X_train))) # 227846
+        print("Dataset X Test: {0}".format(len(X_test))) # 56961
+        print("Dataset Y Train: {0}".format(len(y_train))) # 227846
+        print("Dataset Y Test: {0}".format(len(y_test))) # 56961
 
         # Calculamos el ratio, debido a que contamos con una data desbalanceada.
         ratio = len(X_train)/count_Frauds 
