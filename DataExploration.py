@@ -22,7 +22,7 @@ class DataExploration(object):
         self.show_chart_histograms_anonymized_features()
     
     def load_dataset(self):
-        self.df = pd.read_csv(config['dataset'])
+        self.df = pd.read_csv(config['dataset_source'])
     
     def show_info_dataset(self):
         print("\nESTRUCTURA DATASET\n")
