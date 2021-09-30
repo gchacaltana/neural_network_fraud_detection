@@ -103,6 +103,22 @@ class BuildTrainingDataset(object):
         print("Dataset Y Train: {0}".format(len(y_train)))
         print("Dataset Y Test: {0}".format(len(y_test)))
 
+        # Calculamos el ratio, debido a que contamos con una data desbalanceada.
+        ratio = len(X_train)/count_Frauds 
+
+        y_train.Fraud *= ratio
+        y_test.Fraud *= ratio
+
+        # Almacenamos el nombre de todas las variables predictoras X_train.
+        features = X_train.columns.values
+
+        # Transformamos cada feature para que tenga una media de 0 y una STD de 1 para
+        # la fase de entrenamiento.
+        for feature in features:
+            mean, std = self.df[feature].mean(), self.df[feature].std()
+            X_train.loc[:, feature] = (X_train[feature] - mean) / std
+            X_test.loc[:, feature] = (X_test[feature] - mean) / std
+
         # Guardamos los dataset de entrenamiento y pruebas.
         print("Guardando datasets en disco.")
         X_train.to_csv(config['dataset_x_train'])
